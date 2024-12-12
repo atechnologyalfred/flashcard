@@ -1,51 +1,53 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+  color: #333;
   line-height: 1.5;
+}
+
+#container {
+  margin: 1rem;
+  padding: 2rem;
+  border: 1px solid gray;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+  background-color: #333;
+  color: #fff;
 }
-#game {
-  background-color: blueviolet;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 3rem auto;
-}
-#game ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  
-}
-#game ul  li {
-  display: flex; 
-  width: auto;
-                                                                            
+#container .sub {
+  background-color: rgba(147, 194, 194, 0.42);
+  padding: 2rem;
 }
 
-#game li button {
-  padding: 0.5rem;
-  cursor: pointer;
-  padding: 0.4rem 1rem;
-}
-
-#game li input {
-  width:5rem;
-  padding: 0.4rem 0.1rem;
-  text-align: center;
-  outline: none;
-  border: none;
+#container h3 {
+  padding: 2rem;
   font-weight: 700;
+  text-align: center;
+  font-size: 2rem;
+}
+#container p {
+  text-align: justify;
+  font-size: 1.4rem;
 }
 
+#container .list {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+#container img {
+  width: 8rem;
+  height: 8rem;
 
-
+}

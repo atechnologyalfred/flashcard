@@ -1,9 +1,10 @@
-import Player from './Players/Player.jsx';
-function App () {
-return(
+import StudentHomePage from './StudentHomePage.jsx';
+
+export default function App(){
+return (
   <>
-  <Player />
+  <StudentHomePage />
   </>
 )
+
 }
-export default App;
