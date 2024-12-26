@@ -7,51 +7,71 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: #333;
-  background-color: #f7f7f7;
   font-family: 'Roboto';
 }
 
 #container {
-  padding: 1rem;
-  width: 120rem;
-  margin: 0 auto;
+  padding: 3rem;
+  max-width: 120rem;
+  margin: 3rem auto;
+  background-color: #f7f7f75b;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 #container h1 {
   text-align: center;
   text-transform: uppercase;
   color: #5a2e3b;
 }
-  #container .flash-card {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    width: 100%;
-    margin-top: 3rem;
-    gap: 4rem;
-
-}
-#container .flash-card li {
-  background-color: #7950f2;
-  color: #ffebb3;
-  padding: 3rem;
-  list-style: none;
-  width: 100%;
-  height: 15rem;
+.todolist {
+  max-width: 40rem;
+  padding: 2rem 4rem;
+  background-color: #f4efe3;
+  margin: 0 auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 40rem;
   flex-direction: column;
+  border: 2px solid #f7f7f7;
+  border-radius: 2rem;
+  overflow: auto;
+}
+.todolist .list {
+  display: flex;
+  justify-content: center;
+  height: 4rem;
+  gap: 1rem;
+  align-items: center;
+  
+}
+.todolist .item {
+  flex: 1;
+  padding: 2rem;
+}
+.todolist .item li {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+}
+
+.todolist .list input {
+  flex: 1;
+  padding: 1rem;
+  border:none;
+}
+.todolist .list button {
+  height: 5rem;
   cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid gray;
+  aspect-ratio: 1;
+  background-color: #7950f2;
+  color: #fff;
+  font-size: 2rem;
 }
 
-#container .flash-card .active {
-  background-color: #ffebb3;
-  color: #5a3e2b;
-  border: 1px solid #e7e7e7;
-  border-radius: 10px;
-
+.todolist .list input:focus {
+  outline: 1px solid gray;
 }
-
-

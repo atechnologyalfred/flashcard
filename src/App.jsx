@@ -1,38 +1,41 @@
 import { useState } from "react"
 
-const items = [
-  {id: 1, question: 'The property of react that is UI is called what ?', answer: 'JSX', },
-  {id: 2, question: 'The custom component in react is called', answer: 'Props'},
-  {id: 3, question: 'The memory of a react component that is responsible for re-rendering of the entire component is called ?', answer: 'useState'},
-  {id: 4, question: 'The property of react that is UI is called what ?', answer: 'JSX', },
-  {id: 5, question: 'The custom component in react is called', answer: 'Props'},
-  {id: 6, question: 'The memory of a react component that is responsible for re-rendering of the entire component is called ?', answer: 'useState'},
-
-]
 export default function App () {
   return (
     <div id = "container">
-      <h1>The flashcard exercise</h1>
-      <FlashChild/>
+      <h1>Todolist</h1>
+      <Todolist />
     </div>
   )
 }
 
+function Todolist () {
 
-  function FlashChild () {
-   const [getAnswer, setGetAnswer] = useState(null)
-    function handleChange(id) {
-      setGetAnswer(id)
-    }
-
-    return (
-      <ul className = "flash-card">
-        {items.map((item, itemIndex) => <li key = {itemIndex} onClick={() => handleChange(item.id)}  className = {item.id === getAnswer ? "active" : null }> 
-        {item.id === getAnswer ? item.answer: item.question}</li>
-        )}
-       </ul>
-         
-    )
-    
+  const [state, setState] = useState("")
+  const [inputValue, setInputValue] = useState([])
+  function handleChange (e) {
+    setState(e.target.value)
+   
   }
-  
+  function handleClick(e) {
+    e.preventDefault()
+    setInputValue(preValue => {
+      return [
+        ...preValue,
+        state,
+      ]
+    })
+    setState("")
+  }
+  return (
+    <form className = "todolist" onSubmit={handleClick}>
+      <div className = "list">
+        <input type = "text" placeholder="enter task" value = {state}  onChange={handleChange} />
+        <button>+</button>
+      </div>
+      <ul className = "item" >
+        {inputValue.map((item, itemIndex) => <li key = {itemIndex}>{item}</li>)}
+      </ul>
+    </form>
+  )
+}
