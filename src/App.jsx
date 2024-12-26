@@ -19,17 +19,6 @@ export default function App () {
 }
 
 
-
-// function FlashParent ({id, question, answer, isTrue}) {
-//   return (
-//     <li>
-//     <h3>{id}</h3>
-//     <p>{question}</p>
-//     <p>{answer}</p>
-//     </li>
-//   )
-//   }
-
   function FlashChild () {
    const [getAnswer, setGetAnswer] = useState(null)
     function handleChange(id) {
